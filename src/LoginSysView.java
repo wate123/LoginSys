@@ -18,22 +18,30 @@ public class LoginSysView extends JFrame {
     private JButton submitButton;
     //Create a Login panel
     private JPanel loginPan = new JPanel();
-    private JFrame back = new JFrame();
     private JFrame welcome = new JFrame();
     private JLabel welText = new JLabel();
 
 
     public void LoginSysView(){
+        Components();
+    }
 
-        title = new JLabel("Username",Label.RIGHT)
+    private void Components(){
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        title = new JLabel("Welcome to My System!");
+        userLab = new JLabel("Username");
         checkButton = new JButton("Check");
         submitButton = new JButton("Submit");
-        back.setForeground(Color.blue);
-        back.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        back.setSize(1000,1000);
+        setForeground(Color.blue);
+        setSize(400,100);
+        setVisible(true);
         loginPan.setSize(600,600);
-        back.add(loginPan);
+        add(loginPan);
         loginPan.add(title);
+        loginPan.add(userLab);
+        loginPan.add(inName);
+        loginPan.add(checkButton);
+        loginPan.setVisible(true);
     }
 
     public JFrame welcome(){
@@ -45,8 +53,8 @@ public class LoginSysView extends JFrame {
     public void addSubmitListener(ActionListener listenSubmit){
         submitButton.addActionListener(listenSubmit);
     }
-    public void dispayPassMessage(String passMessage){
-        JOptionPane.showMessageDialog(this,passMessage);
+    public void dispayPassMessage(){
+         JOptionPane.showMessageDialog(null,"Welcome "+getInName());
     }
 
     public void dispayErrorMessage(String errorMessage){

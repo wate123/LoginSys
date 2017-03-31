@@ -10,14 +10,11 @@ public class LoginSysModel {
     public void checkName(String typeName, String dataName){
 
     }
-    public boolean getCheckName(){
-        return
-    }
 
     //return true if and only if Username is in database
-    public static boolean isValidUserName(String userName){
-
-    }
+//    public static boolean isValidUserName(String userName){
+//        return null;
+//    }
 
     //Password policy Check
     //1. Must have at least 8 characters
